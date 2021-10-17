@@ -7,9 +7,24 @@
 				</div>
 				<button class="add">+ Добавить</button>
 			</div>
-			<div class="table">
-				
-			</div>
+			<table>
+				<thead>
+					<tr>
+						<td>
+
+						</td>
+						<td>
+							Общее количество
+						</td>
+						<td>
+							Фактическое количество
+						</td>
+						<td>
+							Действия
+						</td>
+					</tr>
+				</thead>
+			</table>
 		</div>
 	</section>
 </template>
@@ -19,20 +34,28 @@ export default {
 }
 </script>
 <style>
-body{
-	font-family: 'Open Sans', sans-serif;
-}
-:root {
-  --header-bg-color: #5581a9;
-}
+	body{
+		font-family: 'Open Sans', sans-serif;
+	}
+	:root {
+		--header-bg-color: #5581a9;
+	}
+</style>
+<style>
 .container{
 	max-width: 1170px;
 	margin: auto;
 	height: 1000px;
 }
 .header div{
+	color: #FFF;
 	padding: 10px 16px;
 	margin: 0;
-	background-color: #5581a9
+	background-color: var(--header-bg-color);
+	font-weight: 600;
+}
+.header button{
+	margin: 10px 16px;
+	font-size: 16px;
 }
 </style>
