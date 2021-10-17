@@ -24,6 +24,9 @@
 						</td>
 					</tr>
 				</thead>
+				<tbody>
+					
+				</tbody>
 			</table>
 		</div>
 	</section>
@@ -42,20 +45,28 @@ export default {
 	}
 </style>
 <style>
-.container{
-	max-width: 1170px;
-	margin: auto;
-	height: 1000px;
-}
-.header div{
-	color: #FFF;
-	padding: 10px 16px;
-	margin: 0;
-	background-color: var(--header-bg-color);
-	font-weight: 600;
-}
-.header button{
-	margin: 10px 16px;
-	font-size: 16px;
-}
+	.container{
+		max-width: 1170px;
+		margin: auto;
+		height: 1000px;
+	}
+	.header div{
+		color: #FFF;
+		padding: 10px 16px;
+		margin: 0;
+		background-color: var(--header-bg-color);
+		font-weight: 600;
+	}
+	.header button{
+		margin: 10px 16px;
+		font-size: 16px;
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	table thead{
+		background-color: var(--header-bg-color);
+		color: #FFF;
+	}
 </style>
