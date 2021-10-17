@@ -18,9 +18,12 @@ export default {
 	name: 'page'
 }
 </script>
-<style scoped>
+<style>
+body{
+	font-family: 'Open Sans', sans-serif;
+}
 :root {
-  --header-bg-color: #3a4651;
+  --header-bg-color: #5581a9;
 }
 .container{
 	max-width: 1170px;
@@ -30,6 +33,6 @@ export default {
 .header div{
 	padding: 10px 16px;
 	margin: 0;
-	background-color: var(--header-bg-color);
+	background-color: #5581a9
 }
 </style>
