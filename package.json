@@ -1,0 +1,19 @@
+{
+  "name": "test-task-front",
+  "version": "1.0.0",
+  "description": "Front test task on vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doszhan0906/test-task-front.git"
+  },
+  "author": "Doszhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doszhan0906/test-task-front/issues"
+  },
+  "homepage": "https://github.com/doszhan0906/test-task-front#readme"
+}
