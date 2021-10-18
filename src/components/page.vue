@@ -26,7 +26,7 @@
 						v-for="(node,node_index) in divisions" 
 						:key="node_index" 
 						:node="node"
-						:depth=1
+						:depth=0
 					/>
 				</div>
 			</div>

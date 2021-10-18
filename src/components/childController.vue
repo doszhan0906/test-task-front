@@ -1,6 +1,6 @@
 <template>
 	<div class="tree-menu">
-		<div class="tree-node flex">
+		<div class="tree-node flex" :style="`background-color: rgba(71, 162, 245, ${!depth ? depth : depth === 1 ? '0.1': 1 - 1/depth})`">
 			<div :style="indent" @click="collapseTree($event)"><i class="fa icon" :class="arrowIconClass" v-if="hasChild"/>{{ node.name }}</div>
 			<div>{{this.totalCount()}}</div>
 			<div>{{node.count}}</div>
@@ -106,6 +106,7 @@ export default {
 <style scoped>
 	.tree-node{
 		cursor: pointer;
+		background-color: rgba(71, 162, 245, 0);
 	}
 	.tree-node div{
 		flex: 0 0 20%;
