@@ -22,29 +22,12 @@
 					</div>
 				</div>
 				<div class="table-body">
-					<!-- <div class="table-row flex" v-for="(division, division_key) in divisions" :key="division_key"> -->
-						<!-- <div>
-							<span>
-								{{division.name}}
-							</span>
-						</div>
-						<div>
-							{{100}}
-						</div>
-						<div>
-							{{division.count}}
-						</div>
-						<div>
-							<i class="fa fa-pencil"></i>
-							<i class="fa fa-close"></i>
-						</div> -->
-						<child-controller 
-							v-for="(node,node_index) in divisions" 
-							:key="node_index" 
-							:node="node"
-							:depth=1
-						/>
-					<!-- </div> -->
+					<child-controller 
+						v-for="(node,node_index) in divisions" 
+						:key="node_index" 
+						:node="node"
+						:depth=1
+					/>
 				</div>
 			</div>
 		</div>
@@ -99,8 +82,11 @@ export default {
 		background-color: var(--header-bg-color);
 		color: #FFF;
 	}
-	.table-header div, .table-row div{
-		flex: 0 0 25%;
+	.table-header div:first-child{
+		flex: 0 0 40%;
+	}
+	.table-header div {
+		flex: 0 0 20%;	
 	}
 	.table-row div:first-child {
 		padding-left: 16px;
