@@ -7,27 +7,40 @@
 				</div>
 				<button class="add">+ Добавить</button>
 			</div>
-			<table>
-				<thead>
-					<tr>
-						<td>
-
-						</td>
-						<td>
-							Общее количество
-						</td>
-						<td>
-							Фактическое количество
-						</td>
-						<td>
-							Действия
-						</td>
-					</tr>
-				</thead>
-				<tbody>
-					
-				</tbody>
-			</table>
+			<div class="table">
+				<div class="table-header flex">
+					<div>
+					</div>
+					<div>
+						Общее количество
+					</div>
+					<div>
+						Фактическое количество
+					</div>
+					<div>
+						Действия
+					</div>
+				</div>
+				<div class="table-body">
+					<div class="table-row flex">
+						<div>
+							<span>
+								Нур-Султан
+							</span>
+						</div>
+						<div>
+							100
+						</div>
+						<div>
+							15
+						</div>
+						<div>
+							<i class="fa fa-pencil"></i>
+							<i class="fa fa-close"></i>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </template>
@@ -42,6 +55,9 @@ export default {
 	}
 	:root {
 		--header-bg-color: #5581a9;
+	}
+	.flex {
+		display: flex;
 	}
 </style>
 <style>
@@ -61,12 +77,17 @@ export default {
 		margin: 10px 16px;
 		font-size: 16px;
 	}
-	table {
-		width: 100%;
+	.table {
 		border-collapse: collapse;
 	}
-	table thead{
+	.table-header{
 		background-color: var(--header-bg-color);
 		color: #FFF;
+	}
+	.table-header div, .table-row div{
+		flex: 0 0 25%;
+	}
+	.table-row {
+		justify-content: space-around;
 	}
 </style>
