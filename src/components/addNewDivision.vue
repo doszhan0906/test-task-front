@@ -7,7 +7,7 @@
 		<template v-slot:body>
 			<div>
 				<input placeholder="Город" v-model="city">
-				<input placeholder="Количество" v-model="count">
+				<input type='number' placeholder="Количество" v-model="count">
 			</div>
 			<button @click="submitData">Отправить</button>
 		</template>
@@ -33,10 +33,18 @@ export default {
 			this.$store.commit('addNewDivisionModalChange')
 		},
 		submitData () {
-			this.$store.commit('addNewDivision',{name: this.city, count: this.count});
+			const new_id = this.getLastId();
+			this.$store.commit('addNewDivision',{name: this.city, count: this.count, id: new_id + 1});
 			this.city = '';
 			this.count = '';
 			this.closeModal();
+		},
+		getLastId (array = this.$store.state.divisions, last=0) {
+			if(array[array.length - 1].children && array[array.length - 1].children.length) {
+				return this.getLastId(array[array.length - 1].children, last)
+			}
+			return array[array.length - 1].id;
+			
 		}
 	},
 }
