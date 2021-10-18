@@ -22,8 +22,8 @@
 					</div>
 				</div>
 				<div class="table-body">
-					<div class="table-row flex" v-for="(division, division_key) in divisions" :key="division_key">
-						<div>
+					<!-- <div class="table-row flex" v-for="(division, division_key) in divisions" :key="division_key"> -->
+						<!-- <div>
 							<span>
 								{{division.name}}
 							</span>
@@ -37,16 +37,24 @@
 						<div>
 							<i class="fa fa-pencil"></i>
 							<i class="fa fa-close"></i>
-						</div>
-					</div>
+						</div> -->
+						<child-controller 
+							v-for="(node,node_index) in divisions" 
+							:key="node_index" 
+							:node="node"
+							:depth=1
+						/>
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>
 	</section>
 </template>
 <script>
+import childController from './childController.vue'
 export default {
 	name: 'page',
+	components: {childController},
 	methods: {
 		addNewCity(){
 			console.log(this.$store.state.divisions)
@@ -94,7 +102,7 @@ export default {
 	.table-header div, .table-row div{
 		flex: 0 0 25%;
 	}
-	.table-row {
-		justify-content: space-around;
+	.table-row div:first-child {
+		padding-left: 16px;
 	}
 </style>
