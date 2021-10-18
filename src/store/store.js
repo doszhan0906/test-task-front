@@ -36,6 +36,20 @@ const store = new Vuex.Store({
 				}
 			};
 			removeFromTree(divisions, id)
+		},
+		editDivision (state, data) {
+			const divisions = state.divisions;
+			const editDivisionTree = (tree) => {
+				for (const index in tree) {
+					if (tree[index].id === data.id) {
+						tree[index].name = data.name;
+						tree[index].count = data.count;
+						return;
+					}
+					editDivisionTree(tree[index].children);
+				}
+			};
+			editDivisionTree(divisions)
 		}
 	}
 })

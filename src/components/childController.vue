@@ -51,7 +51,7 @@ export default {
 		return {
 			isActive: false,
 			city: '',
-			count: '',
+			count: 0,
 			editModal: false,
 			deleteModal: false
 		}
@@ -62,9 +62,9 @@ export default {
 			this.isActive = !this.isActive
 		},
 		totalCount (node = this.node) {
-			let tCount = node.count;
+			let tCount = parseInt(node.count);
 			for(const i in node.children) {
-				return tCount + this.totalCount(node.children[i])    
+				return tCount + this.totalCount(node.children[i])
 			}
 			return tCount
 		},
@@ -76,11 +76,8 @@ export default {
 			this.editModal = true;
 		},
 		saveData () {
-			console.log(this.city);
-			this.node.count = this.count;
-			this.node.name = this.city;
-			this.city = '';
-			this.count = '';
+			this.$store.commit('editDivision', {name: this.city, count: this.count, id: this.node.id});
+			this.editModal = false;
 		},
 		closeDeleteModal() {
 			this.deleteModal = false;
