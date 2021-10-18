@@ -2,7 +2,7 @@
 	<div class="tree-menu">
 		<div class="tree-node flex" @click="collapseTree">
 			<div :style="indent">{{ node.name }}</div>
-			<div>{{1000}}</div>
+			<div>{{this.totalCount()}}</div>
 			<div>{{node.count}}</div>
 		</div>
 		<tree-menu 
@@ -27,6 +27,13 @@
 		methods: {
 			collapseTree () {
 				this.isActive = !this.isActive
+			},
+			totalCount (node = this.node) {
+				let tCount = node.count;
+				for(const i in node.children) {
+					return tCount + this.totalCount(node.children[i])    
+				}
+				return tCount
 			}
 		},
 		computed: {
