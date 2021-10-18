@@ -5,7 +5,7 @@
 				<div>
 				ОРГАНИЗАЦИОННАЯ СТРУКТУРА
 				</div>
-				<button class="add">+ Добавить</button>
+				<button class="add" @click="addNewCity">+ Добавить</button>
 			</div>
 			<div class="table">
 				<div class="table-header flex">
@@ -46,7 +46,12 @@
 </template>
 <script>
 export default {
-	name: 'page'
+	name: 'page',
+	methods: {
+		addNewCity(){
+			
+		}
+	}
 }
 </script>
 <style>
