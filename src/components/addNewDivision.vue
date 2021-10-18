@@ -2,6 +2,7 @@
 	<modal v-show="showModal">
 		<template v-slot:header>
 			Добавление
+			<button @click="closeModal" class="close-btn">X</button>
 		</template>
 		<template v-slot:body>
 			<div>
@@ -9,9 +10,6 @@
 				<input placeholder="Количество" v-model="count">
 			</div>
 			<button @click="submitData">Отправить</button>
-		</template>
-		<template v-slot:footer>
-			<button @click="closeModal">Close</button>
 		</template>
 	</modal>
 </template>
@@ -43,3 +41,11 @@ export default {
 	},
 }
 </script>
+<style>
+	input {
+		margin-top: 10px;
+	}
+	.close-btn {
+		float: right;
+	}
+</style>
