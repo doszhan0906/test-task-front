@@ -22,17 +22,17 @@
 					</div>
 				</div>
 				<div class="table-body">
-					<div class="table-row flex">
+					<div class="table-row flex" v-for="(division, division_key) in divisions" :key="division_key">
 						<div>
 							<span>
-								Нур-Султан
+								{{division.name}}
 							</span>
 						</div>
 						<div>
-							100
+							{{100}}
 						</div>
 						<div>
-							15
+							{{division.count}}
 						</div>
 						<div>
 							<i class="fa fa-pencil"></i>
@@ -49,7 +49,12 @@ export default {
 	name: 'page',
 	methods: {
 		addNewCity(){
-			
+			console.log(this.$store.state.divisions)
+		}
+	},
+	computed: {
+		divisions () {
+			return this.$store.state.divisions
 		}
 	}
 }
@@ -81,9 +86,6 @@ export default {
 	.header button{
 		margin: 10px 16px;
 		font-size: 16px;
-	}
-	.table {
-		border-collapse: collapse;
 	}
 	.table-header{
 		background-color: var(--header-bg-color);
