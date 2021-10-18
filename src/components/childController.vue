@@ -1,7 +1,7 @@
 <template>
 	<div class="tree-menu">
-		<div class="tree-node flex" @click="collapseTree">
-			<div :style="indent">{{ node.name }}</div>
+		<div class="tree-node flex" @click="collapseTree($event)">
+			<div :style="indent"><div>{{ node.name }}</div></div>
 			<div>{{this.totalCount()}}</div>
 			<div>{{node.count}}</div>
 		</div>
@@ -25,7 +25,8 @@
 			}
 		},
 		methods: {
-			collapseTree () {
+			collapseTree (event) {
+				event.preventDefault();
 				this.isActive = !this.isActive
 			},
 			totalCount (node = this.node) {
@@ -44,12 +45,13 @@
 	}
 </script>
 <style scoped>
+	.tree-node{
+		cursor: pointer;
+	}
 	.tree-node div{
 		flex: 0 0 20%;
 	}
 	.tree-node div:first-child{
 		flex: 0 0 40%;
 	}
-</style>
-
 </style>

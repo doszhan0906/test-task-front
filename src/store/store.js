@@ -5,13 +5,16 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 0,
+    addNewDivisionModal: false,
     divisions: divisions
   },
   mutations: {
     increment (state) {
       state.count++
-    }
+    },
+    addNewDivisionModalChange (state) {
+        state.addNewDivisionModal = !state.addNewDivisionModal
+    } 
   }
 })
 export default store;

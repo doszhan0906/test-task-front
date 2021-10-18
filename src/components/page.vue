@@ -5,7 +5,7 @@
 				<div>
 				ОРГАНИЗАЦИОННАЯ СТРУКТУРА
 				</div>
-				<button class="add" @click="addNewCity">+ Добавить</button>
+				<button class="add" @click="addNewDivision">+ Добавить</button>
 			</div>
 			<div class="table">
 				<div class="table-header flex">
@@ -31,16 +31,26 @@
 				</div>
 			</div>
 		</div>
+		<addNewDivision />
 	</section>
 </template>
 <script>
 import childController from './childController.vue'
+import addNewDivision from './addNewDivision.vue'
 export default {
 	name: 'page',
-	components: {childController},
+	components: {childController,addNewDivision},
+	data () {
+		return {
+			addNewOpen: false
+		}
+	},
 	methods: {
-		addNewCity(){
-			console.log(this.$store.state.divisions)
+		addNewDivision(){
+			this.$store.commit('addNewDivisionModalChange')
+		},
+		closeModal () {
+			this.addNewOpen = false;
 		}
 	},
 	computed: {
