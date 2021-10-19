@@ -65,7 +65,7 @@ export default {
 		font-family: 'Open Sans', sans-serif;
 	}
 	:root {
-		--header-bg-color: #5581a9;
+		--header-bg-color: #3a5064;
 	}
 	.flex {
 		display: flex;
@@ -83,6 +83,9 @@ export default {
 		margin: 0;
 		background-color: var(--header-bg-color);
 		font-weight: 600;
+		height: 40px;
+		display: flex;
+		align-items: center;
 	}
 	.header button{
 		margin: 10px 16px;
@@ -91,6 +94,9 @@ export default {
 	.table-header{
 		background-color: var(--header-bg-color);
 		color: #FFF;
+		height: 40px;
+		display: flex;
+		align-items: center;
 	}
 	.table-header div:first-child{
 		flex: 0 0 40%;
